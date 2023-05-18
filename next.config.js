@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
-const withLess = require("@zeit/next-less");
+const withAntdLess = require("next-plugin-antd-less");
+const path = require("path");
 
-const nextConfig = withLess({
+const nextConfig = withAntdLess({
   reactStrictMode: true,
-  serverRuntimeConfig: {},
-  // 添加Less配置选项（可选）
-  lessLoaderOptions: {
-    /* 在这里可以添加Less loader的配置 */
-    // 示例：启用CSS Modules
-    modules: true,
+  transpilePackages: ["antd"],
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
   },
+  // 添加Less配置选项（可选）
 });
 
 module.exports = nextConfig;
