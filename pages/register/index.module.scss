@@ -5,4 +5,30 @@
   height: 100%;
   width: 100%;
   color: #000;
+
+  .title {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  .center {
+    width: 800px;
+    height: 1000px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+  }
 }

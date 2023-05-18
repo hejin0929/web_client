@@ -11,8 +11,8 @@ export default defineConfig([
       enabled: true,
     },
     prodEnvName: "production", //这里貌似和swagger无关
-    outputFilePath: "./types.ts", //输出文件路径。
-    requestFunctionFilePath: "./index.ts", //请求函数文件路径。
+    outputFilePath: "./index.ts", //输出文件路径。
+    requestFunctionFilePath: "./requset.ts", //请求函数文件路径。
     // dataKey: "data",//如果接口响应的结果是 JSON 对象， 且我们想要的数据在该对象下， 那我们就可将 dataKey 设为我们想要的数据对应的键。
     projects: [
       {
