@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { FC } from "react";
 import styles from "./index.module.scss";
-import { Image, Form, Input, Button } from "antd";
-import { Col, Row } from "antd";
+import { Image, Form, Input, Button, Steps, Col, Row, Result } from "antd";
 import { useUsers } from "@/store";
+import { LoadingOutlined } from "@ant-design/icons";
 
 const Register: FC = () => {
   return (
@@ -14,10 +14,25 @@ const Register: FC = () => {
           <Image
             preview={false}
             src="https://img1.baidu.com/it/u=4000382501,1339962166&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
-            width={250}
-            height={150}
+            width={150}
+            height={80}
           />
         </div>
+
+        <Steps
+          style={{ width: 400, marginLeft: "180px", marginBottom: 20 }}
+          current={0}
+          items={[
+            {
+              status: "process",
+              icon: <LoadingOutlined />,
+              title: "填写表单注册",
+            },
+            {
+              title: "注册完成",
+            },
+          ]}
+        />
 
         <Form
           name="basic"
@@ -132,6 +147,15 @@ const Register: FC = () => {
             </Button>
           </Form.Item>
         </Form>
+        {/* <Result
+          status="success"
+          title="恭喜你注册完成"
+          extra={[
+            <Button type="primary" key="console">
+              去登陆
+            </Button>,
+          ]}
+        /> */}
       </div>
     </div>
   );
