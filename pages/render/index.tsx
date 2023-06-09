@@ -1,9 +1,10 @@
-import { FC, useEffect } from "react";
+import { FC, useRef } from "react";
+import { useRender } from "./store";
 
 const Render: FC = () => {
-  useEffect(() => {}, []);
+  const ref = useRef<HTMLDivElement>(null);
 
-  return <div>123</div>;
+  return <div id="render" ref={ref}></div>;
 };
 
 export default Render;

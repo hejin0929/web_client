@@ -1,14 +1,16 @@
-import { createContext } from "react";
-import { atom, useRecoilState } from "recoil";
 import { GetApiV1UsersResponse } from "@/pages/api";
+import { configureStore } from "@reduxjs/toolkit";
+import userSlice from "./user";
 
-export const store = new (class Stores {})();
-
-export const textState = atom<GetApiV1UsersResponse["data"] | undefined>({
-  key: "user", // unique ID (with respect to other atoms/selectors)
-  default: undefined, // default value (aka initial value)
+const store = configureStore({
+  reducer: {
+    user: userSlice,
+  },
 });
 
-export const useUsers = () => useRecoilState(textState);
+// 从 store 本身推断出 `RootState` 和 `AppDispatch` 类型
+export type RootState = ReturnType<typeof store.getState>;
+// 推断出类型: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch;
 
-export default createContext(store);
+export default store;

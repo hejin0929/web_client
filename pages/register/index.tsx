@@ -2,7 +2,6 @@
 import { FC } from "react";
 import styles from "./index.module.scss";
 import { Image, Form, Input, Button, Steps, Col, Row, Result } from "antd";
-import { useUsers } from "@/store";
 import { LoadingOutlined } from "@ant-design/icons";
 
 const Register: FC = () => {
